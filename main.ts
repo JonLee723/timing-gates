@@ -21,6 +21,7 @@ input.onPinPressed(TouchPin.P1, function () {
     v = 10000 / d
     while (true) {
         basic.showNumber(v)
+        basic.showString("m/s")
     }
 })
 let v = 0
