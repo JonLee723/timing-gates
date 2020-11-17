@@ -1,5 +1,5 @@
 input.onPinPressed(TouchPin.P0, function () {
-    t0 = control.eventTimestamp()
+    t0 = input.runningTime()
     basic.showLeds(`
         # . . . .
         # . . . .
@@ -9,7 +9,7 @@ input.onPinPressed(TouchPin.P0, function () {
         `)
 })
 input.onPinPressed(TouchPin.P1, function () {
-    t1 = control.eventTimestamp()
+    t1 = input.runningTime()
     basic.showLeds(`
         # . . . #
         # . . . #
@@ -18,8 +18,12 @@ input.onPinPressed(TouchPin.P1, function () {
         # . . . #
         `)
     d = t1 - t0
-    basic.showNumber(d)
+    v = 10000 / d
+    while (true) {
+        basic.showNumber(v)
+    }
 })
+let v = 0
 let d = 0
 let t1 = 0
 let t0 = 0
